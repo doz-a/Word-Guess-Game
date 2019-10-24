@@ -9,6 +9,7 @@ body {
 .container {
     margin: auto;
     text-align: center;
+    background-color: white;
 }
 
 /* get container holding main text that is slightly transparent to see all the food and make people hungry  */
