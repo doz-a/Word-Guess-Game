@@ -19,26 +19,43 @@ console.log(mainletter);
 function generator() {
     mainletter = letters[Math.floor(Math.random() * letters.length)];
     console.log(mainletter);
-
 }
-generator
 
 // capturing the letters pressed by the player 
 
 document.onkeyup = function (event) {
     var playerguess = event.key;
     console.log(playerguess);
-    // if player wins
+
+    // if player guesses right, wins the game is reset, score+1
     if (playerguess === mainletter) {
         wins++;
         guessesleft = 12;
         lettersguessed = [];
-
+        generator()
     }
+    // if player guesses wrong they lose a guess, add a letter to lettersguessed array
     if (playerguess !== mainletter) {
         guessesleft--;
+        lettersguessed.push(playerguess);
+        document.getElementById('lettersguessed').innerHTML = lettersguessed;
+        console.log(lettersguessed);
     }
+    // if player loses by guesses left lowering to 0, game is reset, losses +1, documents the computer-chosen letter in the mainletterx div
+    if (guessesleft == 0) {
+        losses++;
+        lettersguessed = []
+        guessesleft = 12;
+        document.getElementById('mainletterx').innerHTML = mainletter;
+        generator()
+    }
+
+
+    // documents into wins, losses, guessesleft divs 
     document.getElementById("wins").innerHTML = wins;
+    document.getElementById("losses").innerHTML = losses;
+    document.getElementById("guessesleft").innerHTML = guessesleft;
+
 }
 
     // 1. [Watch the demo](https://youtu.be/qTc45Lox97g).
