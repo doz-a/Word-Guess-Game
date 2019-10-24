@@ -1,4 +1,4 @@
-/* background image get it to work >:( */
+/* background image  */
 
 body {
     background-image: url(../images/mexifood.jpg);
@@ -6,10 +6,11 @@ body {
     display: flex;
 }
 
+/* get container holding main text that is slightly transparent to see all the food and make people hungry  */
+
 .container {
     margin: auto;
     text-align: center;
     background-color: white;
+    opacity: .7;
 }
-
-/* get container holding main text that is slightly transparent to see all the food and make people hungry  */
