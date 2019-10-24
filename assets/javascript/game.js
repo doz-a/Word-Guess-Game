@@ -38,6 +38,7 @@ document.onkeyup = function (event) {
     if (playerguess !== mainletter) {
         guessesleft--;
     }
+    document.getElementById("wins").innerHTML = wins;
 }
 
     // 1. [Watch the demo](https://youtu.be/qTc45Lox97g).
