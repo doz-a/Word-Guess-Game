@@ -1,0 +1,8 @@
+/* background image  */
+
+body {
+    background-image: url(#);
+    background-size: cover;
+}
+
+/* get container holding main text that is slightly transparent to see all the food and make people hungry  */
