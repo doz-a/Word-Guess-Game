@@ -15,7 +15,6 @@ var mainletter = letters[Math.floor(Math.random() * letters.length)];
 // function that resets the game 
 
 
-// on key press at beginning of game 
 
 function generator() {
     mainletter = letters[Math.floor(Math.random() * letters.length)];
