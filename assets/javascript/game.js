@@ -1,25 +1,43 @@
-
+// how to set attempts to appear as 12 instead of 11?
 // options of letters to choose from
-var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 // need function that increases wins when a won is achieved 
-var wins = 0
-// function increases when loss is achieved 
-var losses = 0
+var wins = 0;
+// var that increases when loss is achieved 
+var losses = 0;
 // need function that shows guesses left 
-var guessesleft = 12
+var guessesleft = 12;
 // need function that shows letters guessed 
-var lettersguessed = []
+var lettersguessed = [];
+
+var mainletter = mainletter;
 // getting random word from possiblewords 
-var mainletter = letters[Math.floor(Math.random() * letters.length)];
-
-// function that resets the game 
-
-
+mainletter = letters[Math.floor(Math.random() * letters.length)];
+console.log(mainletter);
+// checks to make sure computer chose a letters, works finally yay 
 
 function generator() {
     mainletter = letters[Math.floor(Math.random() * letters.length)];
     console.log(mainletter);
 
+}
+generator
+
+// capturing the letters pressed by the player 
+
+document.onkeyup = function (event) {
+    var playerguess = event.key;
+    console.log(playerguess);
+    // if player wins
+    if (playerguess === mainletter) {
+        wins++;
+        guessesleft = 12;
+        lettersguessed = [];
+
+    }
+    if (playerguess !== mainletter) {
+        guessesleft--;
+    }
 }
 
     // 1. [Watch the demo](https://youtu.be/qTc45Lox97g).
