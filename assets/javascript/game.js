@@ -7,12 +7,22 @@ var wins = 0
 var guessesleft
 // need function that shows letters guessed 
 var lettersguessed = []
-// need functino that chooses from possiblewords at random 
-var mainword
-
-// need function for onkeypress at beginning
+// getting random word from possiblewords 
+var mainword = possiblewords[Math.floor(Math.random() * words.length)];
 
 
+
+
+
+// on key press at beginning of game 
+document.onkeyup = function (event) {
+
+    var userguess = event.key;
+}
+
+for (i = 0; i < 10; i++) {
+
+}
 
 
     // need viariable for words 
