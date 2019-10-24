@@ -2,11 +2,11 @@
 // options of letters to choose from
 var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 // need function that increases wins when a won is achieved 
-var wins
+var wins = 0
 // function increases when loss is achieved 
-var losses
+var losses = 0
 // need function that shows guesses left 
-var guessesleft
+var guessesleft = 12
 // need function that shows letters guessed 
 var lettersguessed = []
 // getting random word from possiblewords 
@@ -16,12 +16,10 @@ var mainletter = letters[Math.floor(Math.random() * letters.length)];
 
 
 // on key press at beginning of game 
-document.onkeyup = function (event) {
 
-    var userguess = event.key;
-}
-
-for (i = 0; i < 10; i++) {
+function generator() {
+    mainletter = letters[Math.floor(Math.random() * letters.length)];
+    console.log(mainletter);
 
 }
 
