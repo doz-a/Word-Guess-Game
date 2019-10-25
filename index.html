@@ -5,8 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <!-- title here insert some extra style? -->
     <title>FOOD FIESTA
 
 
@@ -22,24 +20,29 @@
 
 <body>
     <div class="container">
-        <h2>Guess what letter I'm thinking of!</h2>
-        <h3>Press any key to get started!</h3>
-        <!-- wins  -->
+        <h2>Guess my Letter</h2>
+        <!-- Bossy Box -->
+        <h3>
+            <div id=instructions>
+                Press any key to get started! :)
+            </div>
+        </h3>
+        <!-- Wins  -->
         <h5>Wins:</h5>
         <div id="wins">0</div>
         <h5>Losses:</h5>
         <div id="losses">0</div>
-        <!-- guesses left  -->
+        <!-- Guesses left  -->
         <h5>Guesses Remaining:</h5>
         <div id="guessesleft">12</div>
-        <!-- letters guessed  -->
+        <!-- Letters guessed  -->
         <h5>Letters Already Guessed:</h5>
-        <div id="lettersguessed">[]</div>
+        <div id="lettersguessed">--</div>
         <h5>The previous letter was....</h5>
-        <div id="mainletterx">-</div>
+        <div id="mainletterx">--</div>
     </div>
 
-    <!-- insert javascript here  -->
+    <!-- Insert javascript here  -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

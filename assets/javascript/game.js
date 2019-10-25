@@ -1,20 +1,25 @@
-// how to set attempts to appear as 12 instead of 11?
-// options of letters to choose from
+// array of letters to choose from
 var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-// need function that increases wins when a won is achieved 
+
+// wins begin at 0
 var wins = 0;
-// var that increases when loss is achieved 
+
+// losses begins at 0
 var losses = 0;
-// need function that shows guesses left 
+
+// guesses left starts at 12
 var guessesleft = 12;
-// need function that shows letters guessed 
+
+// letters guessed empty array 
 var lettersguessed = [];
 
-var mainletter = mainletter;
+// var mainletter = mainletter;
+
 // getting random word from possiblewords 
 mainletter = letters[Math.floor(Math.random() * letters.length)];
 console.log(mainletter);
-// checks to make sure computer chose a letters, works finally yay 
+
+// generator function to call random letter
 
 function generator() {
     mainletter = letters[Math.floor(Math.random() * letters.length)];
@@ -27,51 +32,37 @@ document.onkeyup = function (event) {
     var playerguess = event.key;
     console.log(playerguess);
 
-    // if player guesses right, wins the game is reset, score+1
+    // if player guesses right, wins score+1, the game is reset, updates instructions
     if (playerguess === mainletter) {
         wins++;
         guessesleft = 12;
         lettersguessed = [];
+        document.getElementById('instructions').innerHTML = "Wowz you guessed it!";
         generator()
     }
-    // if player guesses wrong they lose a guess, add a letter to lettersguessed array
+    // if player guesses wrong they lose a guess, add a letter to lettersguessed array, updates instructions
     if (playerguess !== mainletter) {
         guessesleft--;
         lettersguessed.push(playerguess);
         document.getElementById('lettersguessed').innerHTML = lettersguessed;
+        document.getElementById('instructions').innerHTML = "Keep smashing the keyboard!";
         console.log(lettersguessed);
     }
-    // if player loses by guesses left lowering to 0, game is reset, losses +1, documents the computer-chosen letter in the mainletterx div
+    // if player loses by guesses left lowering to 0, game is reset, losses +1, documents the computer-chosen letter in the mainletterx div, updates instructions, resets game with my generator function
     if (guessesleft == 0) {
         losses++;
-        lettersguessed = []
+        lettersguessed = [];
         guessesleft = 12;
         document.getElementById('mainletterx').innerHTML = mainletter;
+        document.getElementById('instructions').innerHTML = "You destroyed the keyboard. Smash another one!";
         generator()
     }
 
 
-    // documents into wins, losses, guessesleft divs 
+    // updates the wins, losses, guessesleft divs  
     document.getElementById("wins").innerHTML = wins;
     document.getElementById("losses").innerHTML = losses;
     document.getElementById("guessesleft").innerHTML = guessesleft;
 
 }
 
-    // 1. [Watch the demo](https://youtu.be/qTc45Lox97g).
-
-    // 2. You're going to make a game just like the one in the video. Essentially, the app randomly picks a letter, and the user has to guess which letter the app chose. Put the following text on your page:
-
-    // 3. Guess what letter I'm thinking of
-
-    // 4. Wins: (# of times the user has guessed the letter correctly)
-
-    // 5. Losses: (# of times the user has failed to guess the letter correctly after exhausting all guesses)
-
-    // 6. Guesses Left: (# of guesses left. This will update)
-
-    // 7. Your Guesses So Far: (the specific letters that the user typed. Display these until the user either wins or loses.)
-
-    // 8. When the player wins, increase the Wins counter and start the game over again (without refreshing the page).
-
-    // 9. When the player loses, increase the Losses counter and restart the game without a page refresh (just like when the user wins).
