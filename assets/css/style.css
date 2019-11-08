@@ -3,6 +3,7 @@
 body {
     background-image: url(../images/mexifood.jpg);
     background-size: cover;
+    background-repeat: no-repeat;
     display: flex;
 }
 
