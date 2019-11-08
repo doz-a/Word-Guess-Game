@@ -76,7 +76,8 @@ document.onkeyup = function (event) {
         document.getElementById("guessesleft").innerHTML = guessesleft;
     }
     else {
-        alert("invalid letter")
+        document.getElementById('instructions').innerHTML = "That's not a letter :(";
+        generator()
     }
 
 }
